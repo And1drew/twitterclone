@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+</head>
+<body>
+    <h2>Welcome back {{ user }}</h2>
+    <div class='navbar'>
+        <button><a href="/profile/{{user}}/">profile</a></button>
+        <button><a href="/post_tweet/{{user}}/">tweet</a></button>
+        <button><a href="/notifications/{{user}}/">notifcations</a></button>
+        <button><a href="/signout">Sign Out</a></button>
+    </div>
+    <div class='feed'>
+        <ul>
+        {% for tweet in tweets %}
+            <li style="border: solid black 2px; padding: 20px;">
+                {{ tweet.description }}
+                <br>
+                written by: 
+                <span style="font-style: italic; color:red">
+                    <a href="/tweeter/{{ tweet.author }}/">{{ tweet.author }}</a>
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

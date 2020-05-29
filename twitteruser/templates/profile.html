@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter | Profile</title>
+</head>
+<body>
+    This is my profile 
+    <button><a href="/">home</a></button>
+    <div class='feed'>
+        <ul>
+        {% for tweet in tweets %}
+            <li style="border: solid black 2px; padding: 20px;">
+                {{ tweet.description }}
+                <br>
+                <span style="font-style: italic; color:red">
+                    <a href="/tweeter/{{ tweet.author }}/">{{ tweet.author }}</a>
+                </span>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
