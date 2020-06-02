@@ -13,12 +13,10 @@ class tweet(models.Model):
     author = models.ForeignKey(tweeter, on_delete=models.CASCADE)
     description = models.TextField(default='', max_length=140)
     date = models.DateTimeField(default=timezone.now)
-    # likes = models.IntegerField(default=0)
-    # dislikes = models.IntegerField(default=0)
-    # vote_score = models.IntegerField(default=0)
 
 
 class notifications(models.Model):
+    author = models.ForeignKey(tweeter, on_delete=models.CASCADE)
     """
     who is it for?
     what tweet was it made from?

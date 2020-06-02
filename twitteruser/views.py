@@ -62,7 +62,6 @@ def tweeter_profile(request, user):
                   {"tweeter": tweeter_info, "tweets": form})
 
 
-@login_required
 def tweet_view(request, user):
     if request.method == "POST":
         form = tweet_form(request.POST)
